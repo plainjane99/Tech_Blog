@@ -2,9 +2,11 @@
   "name": "tech_blog",
   "version": "1.0.0",
   "description": "Full-Stack Challenge: Blog Post",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "start": "node server.js",
+    "test": "jest",
+    "sql": "mysql -u root -p"
   },
   "repository": {
     "type": "git",
