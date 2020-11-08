@@ -60,6 +60,7 @@ main {
 
 .title-text {
     font-size: 20px;
+    color: var(--secondary-color);
     margin: 0;
 }
 
