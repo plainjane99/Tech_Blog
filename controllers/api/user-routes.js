@@ -111,16 +111,16 @@ router.post('/login', (req, res) => {
         }
 
         // initiate the creation of the session before we send the response back
-        req.session.save(() => {
-            // declare session variables
-            // give server access to user's user_id, username, and a boolean of whether user is logged in
-            req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
-            req.session.loggedIn = true;
+        // req.session.save(() => {
+        //     // declare session variables
+        //     // give server access to user's user_id, username, and a boolean of whether user is logged in
+        //     req.session.user_id = dbUserData.id;
+        //     req.session.username = dbUserData.username;
+        //     req.session.loggedIn = true;
 
-            // if there is a match, send message of log in
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
-        });
+        //     // if there is a match, send message of log in
+        //     res.json({ user: dbUserData, message: 'You are now logged in!' });
+        // });
     });
 });
 
@@ -171,16 +171,16 @@ router.delete('/:id', (req, res) => {
 });
 
 // log out route
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            // send back 204 status after the session has successfully been destroyed
-            res.status(204).end();
-        });
-    }
-    else {
-        res.status(404).end();
-    }
-});
+// router.post('/logout', (req, res) => {
+//     if (req.session.loggedIn) {
+//         req.session.destroy(() => {
+//             // send back 204 status after the session has successfully been destroyed
+//             res.status(204).end();
+//         });
+//     }
+//     else {
+//         res.status(404).end();
+//     }
+// });
 
 module.exports = router;
