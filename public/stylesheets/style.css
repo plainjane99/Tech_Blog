@@ -102,6 +102,12 @@ main {
     color: var(--primary-color);
 }
 
+/* Log-in and Sign-up Styling End */
+
+.comment-form {
+    padding: 0 0 20px 0;
+}
+
 .btn {
     background-color: var(--primary-color);
     padding: 5px;
@@ -112,7 +118,6 @@ main {
     border-radius: 5px;
 }
 
-/* Log-in and Sign-up Styling End */
 
 footer {
     background-color: var(--primary-color);
