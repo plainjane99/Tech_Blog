@@ -21,13 +21,10 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // define a post url column 
-        post_url: {
+        // define a post text column 
+        post_text: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isURL: true
-            }
         },
         // define a column for the user that created the post through the user model
         user_id: {

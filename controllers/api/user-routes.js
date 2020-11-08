@@ -1,7 +1,6 @@
 const router = require('express').Router();
 // destructure User, Post and Vote from the imported models
 const { User, Post, Comment } = require('../../models');
-// import the authguard function
 
 // get all users
 router.get('/', (req, res) => {
@@ -29,7 +28,7 @@ router.get('/:id', (req, res) => {
             // include Post and Comment model 
             {
                 model: Post,
-                attributes: ['id', 'title', 'post_url', 'created_at']
+                attributes: ['id', 'title', 'post_text', 'created_at']
             },
             {
                 model: Comment,
