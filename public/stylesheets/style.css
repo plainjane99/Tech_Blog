@@ -78,13 +78,21 @@ main {
 
 .form-wrapper {
     display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
+    justify-content: center;
+    padding: 50px 0;
 }
 
 .login-form,
 .signup-form {
     width: 300px;
+}
+
+.login-form {
+    margin-right: 50px;
+}
+
+.signup-form {
+    margin-left: 50px;
 }
 
 .login-signup {

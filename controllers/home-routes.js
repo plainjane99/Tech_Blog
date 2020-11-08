@@ -50,10 +50,10 @@ router.get('/', (req, res) => {
 // route to display log-in
 router.get('/login', (req, res) => {
     // check for a session and redirect to the homepage if one exists
-    // if (req.session.loggedIn) {
-    //     res.redirect('/');
-    //     return;
-    // }
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
     // log in page doesn't need any variables so we don't need to pass in a second argument
     res.render('login');
 });
