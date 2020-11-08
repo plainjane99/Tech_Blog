@@ -1,0 +1,43 @@
+{{!-- handle both login and signup functionality --}}
+
+<section class="form-wrapper">
+
+    {{!-- login functionality --}}
+    <form class="login-form">
+        <div class="login-signup">Log In:</div>
+        <div>
+            <label for="email-login">email:</label>
+            <input type="text" id="email-login" />
+        </div>
+        <div>
+            <label for="password-login">password:</label>
+            <input type="password" id="password-login" />
+        </div>
+        <div>
+            <button class="btn" type="submit">login</button>
+        </div>
+    </form>
+
+    {{!-- signup functionality --}}
+    <form class="signup-form">
+        <div class="login-signup">or Sign Up:</div>
+        <div>
+            <label for="username-signup">username:</label>
+            <input type="text" id="username-signup" />
+        </div>
+        <div>
+            <label for="email-signup">email:</label>
+            <input type="text" id="email-signup" />
+        </div>
+        <div>
+            <label for="password-signup">password:</label>
+            <input type="password" id="password-signup" />
+        </div>
+        <div>
+            <button class="btn" type="submit">signup</button>
+        </div>
+    </form>
+
+</section>
+
+<script src="/javascript/login.js"></script>

@@ -2,13 +2,12 @@
 
 const router = require('express').Router();
 const apiRoutes = require('./api');
-// const homeRoutes = require('./home-routes.js');
+const homeRoutes = require('./home-routes.js');
 // const dashboardRoutes = require('./dashboard-routes.js');
 
 // prefix api endpoints 
 router.use('/api', apiRoutes);
-// prefix for homeroutes
-// router.use('/', homeRoutes);
+router.use('/', homeRoutes);
 // prefix for dashboard
 // router.use('/dashboard', dashboardRoutes);
 

@@ -65,19 +65,17 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-        // .then(dbUserData => {
-        //     // initiate the creation of the session before we send the response back
-        //     req.session.save(() => {
-        //         // give server access to user's user_id, username, and a boolean of whether user is logged in
-        //         req.session.user_id = dbUserData.id;
-        //         req.session.username = dbUserData.username;
-        //         req.session.loggedIn = true;
+        .then(dbUserData => {
+            // initiate the creation of the session before we send the response back
+            req.session.save(() => {
+                // give server access to user's user_id, username, and a boolean of whether user is logged in
+                req.session.user_id = dbUserData.id;
+                req.session.username = dbUserData.username;
+                req.session.loggedIn = true;
 
-        //         res.json(dbUserData);
-        //     });
-        // })
-        // this .then needs to be deleted once sessions is working
-        .then(dbUserData => res.json(dbUserData))
+                res.json(dbUserData);
+            });
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -92,7 +90,7 @@ router.post('/login', (req, res) => {
     User.findOne({
         // query by username entered and assign to req.body.username
         where: {
-            username: req.body.username
+            email: req.body.email
         }
     }).then(dbUserData => {
         // if username is not found
