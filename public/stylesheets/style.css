@@ -43,6 +43,19 @@ main {
     display: block;
 }
 
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.login-form,
+.signup-form, 
+.new-post-form {
+    width: 400px;
+}
+
 /* Homepage Styling Start */
 .card {
     width: 100%;
@@ -83,11 +96,6 @@ main {
     padding: 50px 0;
 }
 
-.login-form,
-.signup-form {
-    width: 300px;
-}
-
 .login-form {
     margin-right: 50px;
 }
@@ -118,10 +126,42 @@ main {
     border-radius: 5px;
 }
 
-
-footer {
+.new-post-wrapper {
+    display: inline-block;
     background-color: var(--primary-color);
+    border-style: solid;
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
     color: var(--secondary-color);
-    text-align: center;
-    padding: 10px 0;
+}
+
+.post-form-title,
+.post-form-text {
+    color: var(--secondary-color);
+}
+
+#post-title,
+#post-text {
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+}
+
+::placeholder {
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+#post-text {
+    height: 100px;
+}
+
+.post-btn {
+    background-color: var(--secondary-color);
+    padding: 5px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
 }

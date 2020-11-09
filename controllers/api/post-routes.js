@@ -82,8 +82,7 @@ router.post('/', (req, res) => {
         // pulls data from form 
         title: req.body.title,
         post_text: req.body.post_text,
-        // need to change this to session after that is created.
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {

@@ -1,0 +1,30 @@
+<section class="new-post-wrapper">
+    <h2>Create New Post</h2>
+
+    <form class="new-post-form">
+        <div>
+            <label class="post-form-title" for="post-title">Title</label>
+            <input type="text" id="post-title" name="post-title" placeholder="Add a Title"/>
+        </div>
+        <div>
+            <label class="post-form-text" for="post-text">Content</label>
+            <input type="text" id="post-text" name="post-text" placeholder="What do you have to say?" />
+        </div>
+        <button type="submit" class="post-btn">Create</button>
+    </form>
+</section>
+
+{{!-- users won't see content if they have no posts --}}
+{{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    {{#each posts as |post|}}
+    {{!-- use partial to display the details for each post --}}
+    {{> post-info post}}
+    {{!-- route users to a separate edit page --}}
+    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    {{/each}}
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
