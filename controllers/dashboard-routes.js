@@ -2,10 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 // import the authguard function
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
-// insert the withAuth function into the GET route
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     // allow user to see all their existing posts
     Post.findAll({
         where: {

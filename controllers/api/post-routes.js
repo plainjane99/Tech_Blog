@@ -4,7 +4,7 @@ const { Post, User, Comment } = require('../../models');
 // import connection to Sequelize 
 // const sequelize = require('../../config/connection');
 // import the authguard function
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -76,7 +76,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create a post
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // expects {title: '', post_text: '', user_id: 1}
     Post.create({
         // pulls data from form 
@@ -93,7 +93,7 @@ router.post('/', (req, res) => {
 
 // update an existing post
 // first retrieve the post instance by id then alter the value of the title
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
             // takes in all data and replaces the title and/or text of the post
@@ -122,7 +122,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete a post
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id

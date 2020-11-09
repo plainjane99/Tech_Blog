@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 // import the authguard function
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
-// write all comment routes when you get back from dinner.  this have not been touched.
 router.get('/', (req, res) => {
     Comment.findAll({
     })
@@ -15,7 +14,7 @@ router.get('/', (req, res) => {
 
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // check the session
     // ensures that only logged-in users interact with the database
     if (req.session) {
