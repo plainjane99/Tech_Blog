@@ -47,7 +47,7 @@ router.get('/', withAuth, (req, res) => {
 
 // This route should render the edit-post.handlebars template, 
 // passing in data from the same Post.findOne() query that you used in the /post/:id home route
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
 
     Post.findOne({
         where: {
@@ -55,7 +55,7 @@ router.get('/edit/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'post_url',
+            'post_text',
             'title',
             'created_at'
         ],

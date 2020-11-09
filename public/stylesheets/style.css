@@ -1,8 +1,10 @@
+/* color scheme */
 :root {
     --primary-color: #1A237E;
     --secondary-color: #DCDCDC;
 }
 
+/* ----- general page styling start -------------------- */
 header {
     background-color: var(--primary-color);
     display: block;
@@ -49,14 +51,36 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+/* ----- general page styling end -------------------- */
 
+/* ----- log-in and sign-up styling start -------------------- */
 .login-form,
-.signup-form, 
-.new-post-form {
+.signup-form {
     width: 400px;
 }
 
-/* Homepage Styling Start */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.login-form {
+    margin-right: 50px;
+}
+
+.signup-form {
+    margin-left: 50px;
+}
+
+.login-signup {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+/* ----- log-in and sign-up styling end -------------------- */
+
+/* ----- post styling start -------------------- */
 .card {
     width: 100%;
     border-radius: 5px;
@@ -85,33 +109,9 @@ footer {
 .content-text {
     font-size: 16px;
 }
+/* ----- post styling end -------------------- */
 
-/* Homepage Styling End */
-
-/* Log-in and Sign-up Styling Start */
-
-.form-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 50px 0;
-}
-
-.login-form {
-    margin-right: 50px;
-}
-
-.signup-form {
-    margin-left: 50px;
-}
-
-.login-signup {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-/* Log-in and Sign-up Styling End */
-
+/* ----- add, edit, delete styling start -------------------- */
 .comment-form {
     padding: 0 0 20px 0;
 }
@@ -126,7 +126,8 @@ footer {
     border-radius: 5px;
 }
 
-.new-post-wrapper {
+.new-post-wrapper,
+.edit-post-form {
     display: inline-block;
     background-color: var(--primary-color);
     border-style: solid;
@@ -136,13 +137,20 @@ footer {
     color: var(--secondary-color);
 }
 
+.new-post-form,
+.edit-post-form {
+    width: 100%;
+}
+
 .post-form-title,
 .post-form-text {
     color: var(--secondary-color);
 }
 
 #post-title,
-#post-text {
+#post-text,
+.edit-post-title,
+.edit-post-text {
     border-radius: 5px;
     background-color: var(--secondary-color);
 }
@@ -152,11 +160,14 @@ footer {
     opacity: 0.5;
 }
 
-#post-text {
+#post-text,
+.edit-post-text {
     height: 100px;
 }
 
-.post-btn {
+.post-btn,
+.save-edit-post,
+.delete-post-btn {
     background-color: var(--secondary-color);
     padding: 5px;
     color: var(--primary-color);
@@ -165,3 +176,8 @@ footer {
     cursor: pointer;
     border-radius: 5px;
 }
+
+.save-edit-post {
+    margin-right: 10px;
+}
+/* ----- add, edit, delete styling end -------------------- */
