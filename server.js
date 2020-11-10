@@ -53,6 +53,6 @@ app.use(routes);
 // establish the connection to the server and database 
 // force: false prevents the drop and re-create of the database tables at start-up
 // force: true makes the tables re-create if there are any association changes
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });

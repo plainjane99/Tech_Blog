@@ -1,15 +1,6 @@
 {{!-- homepage includes blog posts --}}
 {{#each posts as |post|}}
 <a href="/post/{{post.id}}" class="post-wrapper">
-    {{!-- <div class="card">
-        <div class="card-divider title">
-            <p class="title-text">{{title}}</p>
-            <p class="timestamp">Posted by {{user.username}} on {{format_date created_at}}</p>
-        </div>
-        <div class="card-section content">
-            <p class="content-text">{{post_text}}</p>
-        </div>
-    </div> --}}
     {{> post-info post}}
 </a>
 {{/each}}

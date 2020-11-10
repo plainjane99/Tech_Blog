@@ -1,9 +1,6 @@
 const router = require('express').Router();
-// destructure User, Post and Vote from the imported models
 const { Post, User, Comment } = require('../../models');
-// import connection to Sequelize 
-// const sequelize = require('../../config/connection');
-// import the authguard function
+
 const withAuth = require('../../utils/auth');
 
 // get all posts

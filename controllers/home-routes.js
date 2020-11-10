@@ -6,8 +6,6 @@ const router = require('express').Router();
 
 // this route displays all of the posts
 router.get('/', (req, res) => {
-    // show the session variables
-    // console.log(req.session);
 
     Post.findAll({
         attributes: [
@@ -37,7 +35,6 @@ router.get('/', (req, res) => {
             // save the results in a new posts array
             const posts = dbPostData.map(post => post.get({ plain: true }));
             // add new posts array into an object to be passed into the homepage template
-            // the object allows us to add properties in the future
             res.render('homepage', { posts, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
@@ -53,7 +50,6 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    // log in page doesn't need any variables so we don't need to pass in a second argument
     res.render('login');
 });
 

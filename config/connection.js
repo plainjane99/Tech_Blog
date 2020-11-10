@@ -6,8 +6,7 @@ require('dotenv').config();
 // this code is required for deployment to heroku
 let sequelize;
 
-// when deployed, app will have access to heroku's process.env.JAWSDB_URL so
-// it will use that to connect
+// app will use heroku's process.env.JAWSDB_URL
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {

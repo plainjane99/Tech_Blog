@@ -23,8 +23,6 @@
     {{#each posts as |post|}}
         <a href="/dashboard/edit/{{post.id}}" class="post-wrapper">
         {{> post-info post}}
-        {{!-- route users to a separate edit page --}}
-        {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
         </a>
     {{/each}}
 </section>

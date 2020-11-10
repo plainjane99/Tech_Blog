@@ -15,8 +15,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-    // check the session
-    // ensures that only logged-in users interact with the database
+    // check the session to ensure that only logged-in users interact with the database
     if (req.session) {
         Comment.create({
             comment_text: req.body.comment_text,
@@ -43,7 +42,6 @@ router.delete('/:id', (req, res) => {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-            // return the resulting
             res.json(dbPostData);
             console.log(dbPostData);
         })
@@ -51,7 +49,7 @@ router.delete('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
-
+        
 });
 
 module.exports = router;

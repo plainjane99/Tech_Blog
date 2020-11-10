@@ -8,8 +8,7 @@ router.get('/', withAuth, (req, res) => {
     // allow user to see all their existing posts
     Post.findAll({
         where: {
-            // use the ID from the session
-            // in order to pull only the user's posts
+            // use the ID from the session in order to pull only the user's posts
             user_id: req.session.user_id
         },
         attributes: [
@@ -46,7 +45,6 @@ router.get('/', withAuth, (req, res) => {
 });
 
 // This route should render the edit-post.handlebars template, 
-// passing in data from the same Post.findOne() query that you used in the /post/:id home route
 router.get('/edit/:id', withAuth, (req, res) => {
 
     Post.findOne({

@@ -1,6 +1,6 @@
 const router = require('express').Router();
-// destructure User, Post and Vote from the imported models
 const { User, Post, Comment } = require('../../models');
+
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -127,7 +127,6 @@ router.post('/login', (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     // expects {username: '', email: '', password: ''}
 
-    // use sequelize's update method to combine the parameters for creating data and looking up data
     // we pass in req.body to provide new data we want to use in the update
     User.update(req.body, {
         individualHooks: true,
