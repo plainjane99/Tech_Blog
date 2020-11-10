@@ -1,6 +1,7 @@
 const router = require('express').Router();
-// destructure User, Post and Vote from the imported models
 const { User, Post, Comment } = require('../../models');
+
+const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
@@ -65,19 +66,17 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-        // .then(dbUserData => {
-        //     // initiate the creation of the session before we send the response back
-        //     req.session.save(() => {
-        //         // give server access to user's user_id, username, and a boolean of whether user is logged in
-        //         req.session.user_id = dbUserData.id;
-        //         req.session.username = dbUserData.username;
-        //         req.session.loggedIn = true;
+        .then(dbUserData => {
+            // initiate the creation of the session before we send the response back
+            req.session.save(() => {
+                // give server access to user's user_id, username, and a boolean of whether user is logged in
+                req.session.user_id = dbUserData.id;
+                req.session.username = dbUserData.username;
+                req.session.loggedIn = true;
 
-        //         res.json(dbUserData);
-        //     });
-        // })
-        // this .then needs to be deleted once sessions is working
-        .then(dbUserData => res.json(dbUserData))
+                res.json(dbUserData);
+            });
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -92,7 +91,7 @@ router.post('/login', (req, res) => {
     User.findOne({
         // query by username entered and assign to req.body.username
         where: {
-            username: req.body.username
+            email: req.body.email
         }
     }).then(dbUserData => {
         // if username is not found
@@ -125,10 +124,9 @@ router.post('/login', (req, res) => {
 });
 
 // update a user's information
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     // expects {username: '', email: '', password: ''}
 
-    // use sequelize's update method to combine the parameters for creating data and looking up data
     // we pass in req.body to provide new data we want to use in the update
     User.update(req.body, {
         individualHooks: true,
@@ -151,7 +149,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete a user
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     User.destroy({
         where: {
             id: req.params.id

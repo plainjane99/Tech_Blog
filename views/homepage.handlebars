@@ -1,0 +1,6 @@
+{{!-- homepage includes blog posts --}}
+{{#each posts as |post|}}
+<a href="/post/{{post.id}}" class="post-wrapper">
+    {{> post-info post}}
+</a>
+{{/each}}

@@ -1,0 +1,41 @@
+{{!-- partial to minimize the repeated code across templates --}}
+<a href="/"> &larr; Back to Home</a>
+
+<div class="card">
+    <div class="card-divider title">
+        <h4 class="title-text">{{post.title}}</h4>
+        <p class="timestamp">Posted by {{post.user.username}} on {{format_date post.created_at}}</p>
+    </div>
+    <div class="card-section content">
+        <p class="content-text">{{post.post_text}}</p>
+    </div>
+</div>
+
+{{#if loggedIn}}
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button class="btn" type="submit">add comment</button>
+    </div>
+</form>
+{{/if}}
+
+<div class="card">
+    <div class="card-divider title">
+        <h4 class="title-text">Comments</h4>
+    </div>
+    <div class="card-section content">
+        {{#each post.comments as |comment|}}
+        <p class="content-text">{{comment_text}}</p>
+        <p>- {{user.username}} on {{format_date created_at}}</p>
+        </br>
+        {{/each}}
+    </div>
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

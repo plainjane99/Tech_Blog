@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- foundation styling-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Tech Blog</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+            {{#if loggedIn}}
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/users/logout" id="logout" class="btn-no-style">Logout</a>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        </nav>
+
+        <h1>
+            <a id="title" href="/">The Tech Blog</a>
+        </h1>
+
+    </header>
+
+    <main>
+        {{{ body }}}
+    </main>
+
+    <footer>
+        Community sharing at it's best!
+    </footer>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>

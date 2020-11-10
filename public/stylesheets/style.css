@@ -1,0 +1,199 @@
+/* color scheme */
+:root {
+    --primary-color: #1A237E;
+    --secondary-color: #DCDCDC;
+}
+
+/* ----- general page styling start -------------------- */
+header {
+    background-color: var(--primary-color);
+    display: block;
+    justify-content: left;
+    padding-left: 30px;
+    height: 100px;
+}
+
+nav {
+    padding-top: 10px;
+}
+
+nav a {
+    font-size: 16px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+header h1 {
+    margin-top: 10px;
+}
+
+#title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    justify-content: center;
+    display: block;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 10px 0;
+}
+/* ----- general page styling end -------------------- */
+
+/* ----- log-in and sign-up styling start -------------------- */
+.login-form,
+.signup-form {
+    width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+.form-wrapper {
+    display: block;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.login-signup-link {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.login-signup {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+/* ----- log-in and sign-up styling end -------------------- */
+
+/* ----- post styling start -------------------- */
+.dashboard-header {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+.card {
+    width: 100%;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--primary-color);
+}
+
+.title {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    justify-content: space-between;
+}
+
+.title-home {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    justify-content: space-between;
+}
+
+.title-home:hover {
+    background-color: #503aa1;
+}
+
+.title-text {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.content {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.content-text {
+    font-size: 16px;
+}
+/* ----- post styling end -------------------- */
+
+/* ----- add, edit, delete styling start -------------------- */
+.comment-form {
+    padding: 0 0 20px 0;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    padding: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.new-post-wrapper,
+.edit-post-form {
+    background-color: var(--primary-color);
+    border-style: solid;
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.new-post-form,
+.edit-post-form {
+    width: 100%;
+}
+
+.post-form-title,
+.post-form-text {
+    color: var(--secondary-color);
+}
+
+#post-title,
+#post-text,
+.edit-post-title,
+.edit-post-text {
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+}
+
+::placeholder {
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+/* #post-text,
+.edit-post-text {
+    height: 100px;
+} */
+
+.post-btn,
+.save-edit-post,
+.delete-post-btn {
+    background-color: var(--secondary-color);
+    padding: 5px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.save-edit-post {
+    margin-right: 10px;
+}
+/* ----- add, edit, delete styling end -------------------- */
