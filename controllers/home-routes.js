@@ -57,6 +57,16 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// route to display sign-up
+router.get('/signup', (req, res) => {
+    // check for a session and redirect to the log-in if one exists
+    if (req.session.loggedIn) {
+        res.redirect('/login');
+        return;
+    }
+    res.render('signup');
+});
+
 // route for single post
 router.get('/post/:id', (req, res) => {
 

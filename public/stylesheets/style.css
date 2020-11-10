@@ -57,20 +57,20 @@ footer {
 .login-form,
 .signup-form {
     width: 400px;
+    margin: 0 auto;
+    display: block;
 }
 
 .form-wrapper {
-    display: flex;
+    display: block;
     justify-content: center;
     padding: 50px 0;
 }
 
-.login-form {
-    margin-right: 50px;
-}
-
-.signup-form {
-    margin-left: 50px;
+.login-signup-link {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
 }
 
 .login-signup {
@@ -81,6 +81,12 @@ footer {
 /* ----- log-in and sign-up styling end -------------------- */
 
 /* ----- post styling start -------------------- */
+.dashboard-header {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
 .card {
     width: 100%;
     border-radius: 5px;
@@ -93,6 +99,10 @@ footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     justify-content: space-between;
+}
+
+.title:hover {
+    background-color: #503aa1;
 }
 
 .title-text {
@@ -128,7 +138,6 @@ footer {
 
 .new-post-wrapper,
 .edit-post-form {
-    display: inline-block;
     background-color: var(--primary-color);
     border-style: solid;
     padding: 10px 20px 20px 20px;
@@ -160,10 +169,10 @@ footer {
     opacity: 0.5;
 }
 
-#post-text,
+/* #post-text,
 .edit-post-text {
     height: 100px;
-}
+} */
 
 .post-btn,
 .save-edit-post,
@@ -175,6 +184,7 @@ footer {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .save-edit-post {
