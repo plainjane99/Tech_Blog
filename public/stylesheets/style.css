@@ -101,7 +101,13 @@ footer {
     justify-content: space-between;
 }
 
-.title:hover {
+.title-home {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    justify-content: space-between;
+}
+
+.title-home:hover {
     background-color: #503aa1;
 }
 
